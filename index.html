@@ -88,3 +88,62 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptSpy: AI-Driven Android Malware</title>
+</head>
+<body>
+
+    <article>
+        <p>In a significant shift for mobile security, researchers have identified a new strain of Android malware, dubbed <strong>PromptSpy</strong>, that integrates Google’s Gemini AI directly into its execution flow.</p>
+
+        <p>While AI has long been used to write malicious code or craft phishing emails, PromptSpy marks the first known instance of Android malware using generative AI in real-time to adapt its behavior on a victim's device.</p>
+
+        <hr>
+
+        <h2>How PromptSpy Uses Gemini</h2>
+        <p>Traditional malware often fails when moving between different phone models because user interface (UI) layouts, button positions, and OS versions vary. PromptSpy solves this by "hiring" Gemini as a real-time assistant:</p>
+        
+        <ul>
+            <li><strong>Dynamic UI Navigation:</strong> Instead of relying on hardcoded screen coordinates, PromptSpy takes an XML dump of the phone's current screen (including text and button locations) and sends it to Gemini.</li>
+            <li><strong>Instructional Loop:</strong> It asks Gemini for step-by-step instructions on how to navigate the specific device. Gemini responds with JSON instructions (e.g., "tap this button"), which the malware then executes using Android’s Accessibility Services.</li>
+            <li><strong>Persistence:</strong> The primary goal of this AI integration is to ensure the app stays "locked" or pinned in the recent apps list, preventing the system or the user from easily swiping it away or closing it.</li>
+        </ul>
+
+        <h2>Spyware Capabilities</h2>
+        <p>Beyond its AI-driven persistence, PromptSpy functions as a powerful remote access tool (RAT). Once it gains the necessary permissions, it can:</p>
+        <ul>
+            <li>Deploy a VNC module for full remote control.</li>
+            <li>Capture lock screen credentials (PINs and patterns).</li>
+            <li>Record screen activity as video or take screenshots.</li>
+            <li>Prevent uninstallation by placing invisible overlays over "Uninstall" or "Force Stop" buttons.</li>
+        </ul>
+
+        <h2>Risk and Distribution</h2>
+        <p>The malware was discovered by <strong>ESET researchers</strong>, who found it being distributed via a dedicated domain impersonating a major bank (specifically targeting users in Argentina under the name "MorganArg").</p>
+        
+        <p>Evidence suggests the code was developed in a Chinese-speaking environment. While it appears to be a sophisticated proof-of-concept or a limited targeted attack rather than a widespread outbreak, it signals a "new phase" of AI-assisted threats.</p>
+
+        <blockquote>
+            <strong>Google’s Response:</strong> Google confirmed that Google Play Protect automatically protects users against known versions of this malware. Currently, no apps containing PromptSpy have been found on the official Google Play Store.
+        </blockquote>
+
+        <hr>
+
+        <h2>How to Stay Safe</h2>
+        <ul>
+            <li><strong>Avoid Sideloading:</strong> Do not download banking apps or "updates" from third-party websites.</li>
+            <li><strong>Use Safe Mode for Removal:</strong> If infected, PromptSpy's overlays make it nearly impossible to uninstall normally. You must reboot into Safe Mode to disable the malware's interference and delete the app.</li>
+            <li><strong>Audit Permissions:</strong> Be extremely wary of any app asking for Accessibility Services unless it is a known, trusted utility.</li>
+        </ul>
+
+        <p><em>Would you like me to look up the specific steps for booting your particular phone model into Safe Mode?</em></p>
+        
+        <p><small>By the way, to unlock the full functionality of all Apps, enable Gemini Apps Activity.</small></p>
+    </article>
+
+</body>
+</html>
